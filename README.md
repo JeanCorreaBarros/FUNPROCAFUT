@@ -1,6 +1,6 @@
 ## FUNPROCAFUT — Plataforma de gestión empresarial (FUNPROCAFUT App)
 
-FUNPROCAFUT es una plataforma SaaS de gestión empresarial enfocada en ofrecer funcionalidades de facturación, contabilidad, inventarios, agenda, clientes, caja y más, construida con Next.js, React y TypeScript.
+FUNPROCAFUT es una plataforma SaaS de gestión enfocada en entornos escolares y educativos. Ofrece funcionalidades adaptadas a centros educativos y estudiantes — gestión de alumnos, calificaciones, horarios y agenda — además de los módulos administrativos clásicos (facturación, contabilidad, inventarios, clientes, caja, etc.). Esta es la edición estudiantil (Student Edition) **powered by Bivoo**.
 
 ### Resumen
 
