@@ -106,8 +106,8 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <div className="w-full max-w-6xl flex rounded-3xl overflow-hidden shadow-2xl bg-white">
+    <div className="min-h-screen lg:bg-gray-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-6xl flex rounded-3xl overflow-hidden lg:shadow-2xl bg-white">
 
         {/* Left Panel */}
         <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-indigo-500 to-purple-600 flex-col justify-center items-start p-16 text-white">
@@ -152,8 +152,8 @@ export default function LoginPage() {
                     key={index}
                     onClick={() => setCarouselIndex(index)}
                     className={`w-3 h-3 rounded-full transition-all ${index === carouselIndex
-                        ? "bg-white w-8"
-                        : "bg-indigo-300 hover:bg-indigo-200"
+                      ? "bg-white w-8"
+                      : "bg-indigo-300 hover:bg-indigo-200"
                       }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
@@ -178,14 +178,15 @@ export default function LoginPage() {
               />
             </div>
 
-        
+
 
             <h1 className="text-3xl font-bold text-blue-400 mb-2">
-              Welcome Back
+              Bienvenido
             </h1>
             <p className="text-gray-500 mb-8">
-              Sign in to your account
+              Inicia sesión en tu cuenta
             </p>
+
 
             {error && (
               <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
@@ -196,7 +197,7 @@ export default function LoginPage() {
             <form onSubmit={handleLogin} className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-gray-600 mb-2">
-                  Email Address
+                 Correo Electrónico
                 </label>
                 <Input
                   type="email"
@@ -210,7 +211,7 @@ export default function LoginPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-600 mb-2">
-                  Password
+                  Contraseña
                 </label>
                 <div className="relative">
                   <Input

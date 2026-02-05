@@ -13,12 +13,12 @@ import {
 import type { User } from "@/lib/features/auth/authSlice"
 
 const demoUsers: Record<string, Omit<User, "permissions">> = {
-  "admin@bivoo.com": {
-    name: "Zenisuk Katori",
-    email: "admin@bivoo.com",
-    company: "ASIKALADOS BARBERSHOP",
+  "admin@funprocafut.com": {
+    name: "Juan Manuel Herazo",
+    email: "admin@funprocafut.com",
+    company: "Liceo Mixto Moderno",
     role: "admin",
-    avatar: "ZK",
+    avatar: "JH",
   },
   "colaborador@bivoo.com": {
     name: "María González",

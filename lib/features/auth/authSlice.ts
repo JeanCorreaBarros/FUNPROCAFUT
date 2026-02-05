@@ -25,10 +25,10 @@ const initialState: AuthState = {
 
 const rolePermissions: Record<UserRole, string[]> = {
   admin: [
-    "agenda.view",
+    /*"agenda.view",
     "agenda.create",
     "agenda.edit",
-    "agenda.delete",
+    "agenda.delete",*/
     "configuracion.view",
     "configuracion.edit",
     "facturacion.view",
@@ -40,19 +40,19 @@ const rolePermissions: Record<UserRole, string[]> = {
     "inventarios.delete",
     "reportes.view",
     "reportes.export",
-    "contabilidad.view",
+    /*"contabilidad.view",
     "contabilidad.edit",
     "nomina.view",
-    "nomina.edit",
-    "marketing.view",
+    "nomina.edit",*/
+    /*"marketing.view",
     "marketing.create",
-    "marketing.edit",
-    "seguridad.view",
-    "seguridad.edit",
-    "vote.view",
+    "marketing.edit",*/
+    /*"seguridad.view",
+    "seguridad.edit",*/
+    /*"vote.view",
     "vote.create",
     "vote.edit",
-    "vote.delete",
+    "vote.delete",*/
     "educative.view",
     "educative.create",
     "educative.edit",

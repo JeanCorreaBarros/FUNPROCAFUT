@@ -1,11 +1,11 @@
 {
-  "name": "Bi-voo - Business Management",
-  "short_name": "Bi-voo",
-  "description": "Plataforma SaaS para gestión empresarial completa",
+  "name": "funprocafut - Plataforma SaaS para gestión académica estudiantil",
+  "short_name": "funprocafut",
+  "description": "Plataforma SaaS para gestión académica estudiantil",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#7e22ce",
+  "theme_color": "#3b82f6",
   "orientation": "portrait-primary",
   "icons": [
     {
