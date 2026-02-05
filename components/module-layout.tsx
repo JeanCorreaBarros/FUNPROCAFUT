@@ -64,7 +64,7 @@ export function ModuleLayout({ children, moduleType }: ModuleLayoutProps) {
           <div className="fixed inset-0 bg-black/50" onClick={() => setIsMobileMenuOpen(false)} />
           <div className="fixed left-0 top-0 h-full w-64 bg-white shadow-xl">
             <div className="flex items-center justify-between p-4 border-b">
-              <Image src="/logo-bivoo.png" alt="Bivoo Logo" width={100} height={32} className="h-10 w-auto" />
+              <Image src={process.env.NEXT_PUBLIC_LOGO_PATH ?? '/logo-FUNPROCAFUT.png'} alt="FUNPROCAFUT Logo" width={100} height={32} className="h-10 w-auto" />
               <Button variant="ghost" size="sm" onClick={() => setIsMobileMenuOpen(false)}>
                 <X size={20} />
               </Button>
@@ -79,7 +79,7 @@ export function ModuleLayout({ children, moduleType }: ModuleLayoutProps) {
         {/* Header */}
         <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
           <div className="px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
+            <div className="flex items-center justify-between h-18">
               {/* Left side - Menu button, Back button and Logo */}
               <div className="flex items-center space-x-2">
                 {isCompactView && (
@@ -103,7 +103,7 @@ export function ModuleLayout({ children, moduleType }: ModuleLayoutProps) {
                 </Button>
 
                 <div className="flex  items-center">
-                  <Image src="/logo-bivoo.png" alt="Bivoo Logo" width={120} height={40} className="h-10  w-auto" />
+                  <Image src={process.env.NEXT_PUBLIC_LOGO_PATH ?? '/logo-FUNPROCAFUT.png'} alt="FUNPROCAFUT Logo" width={120} height={40} className="h-10  w-auto" />
                 </div>
               </div>
 

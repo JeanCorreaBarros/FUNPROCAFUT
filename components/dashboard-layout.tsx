@@ -18,6 +18,7 @@ import {
   BarChart3,
   Menu,
   X,
+  BookOpen,
   CheckCircle,
   Bot,
   XCircle,
@@ -61,9 +62,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
     { icon: BarChart3, label: "Reportes", path: "/reportes", module: "reportes" },
     { icon: Calculator, label: "Contabilidad", path: "/contabilidad", module: "contabilidad" },
     { icon: Users, label: "Nómina", path: "/nomina", module: "nomina" },
-    { icon: Megaphone, label: "Marketing", path: "/marketing", module: "marketing" },
+    /*{ icon: Megaphone, label: "Marketing", path: "/marketing", module: "marketing" },*/
     { icon: Shield, label: "Seguridad", path: "/seguridad", module: "seguridad" },
-    { icon: CheckCircle, label: "Vote", path: "/vote", module: "vote" },
+    /*{ icon: CheckCircle, label: "Vote", path: "/vote", module: "vote" },*/
+     { icon: BookOpen, label: "Educative", path: "/educative", module: "educative" },
     { icon: Settings, label: "Configuración", path: "/configuracion", module: "configuracion" },
   ]
 
@@ -87,7 +89,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               </button>
 
               <div className="flex items-center cursor-pointer" onClick={() => router.push("/dashboard")}>
-                <Image src="/logo-FUNPROCAFUT.png" alt="Bivoo Logo" width={120} height={40} className="h-10 w-auto" />
+                <Image src={process.env.NEXT_PUBLIC_LOGO_PATH ?? '/logo-FUNPROCAFUT.png'} alt="Bivoo Logo" width={120} height={40} className="h-10 w-auto" />
               </div>
             </div>
 

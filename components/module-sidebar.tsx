@@ -30,13 +30,23 @@ interface ModuleSidebarProps {
 
 const moduleConfigs = {
   vote: {
-    title: "Educative",
+    title: "Vote",
     items: [
       { icon: Home, label: "Inicio", path: "/vote", active: true, permission: "vote.view" },
       { icon: Users, label: "Registro de Votantes", path: "/vote/registro", permission: "vote.view" },
       { icon: BarChart3, label: "Verificación de Identidad", path: "/vote/verificacion", permission: "vote.view" },
       { icon: Settings, label: "Auditoría y Registros", path: "/vote/auditoria", permission: "vote.edit" },
       { icon: Settings, label: "Administración", path: "/vote/administracion", permission: "vote.edit" },
+    ],
+  },
+    educative: {
+    title: "Educative",
+    items: [
+      { icon: Home, label: "Inicio", path: "/educative", active: true, permission: "educative.view" },
+      { icon: Users, label: "opcion 1", path: "/educative/1", permission: "educative.view" },
+      { icon: BarChart3, label: "opcion 2", path: "/educative/2", permission: "educative.view" },
+      { icon: Settings, label: "opcion 3", path: "/educative/3", permission: "educative.edit" },
+      { icon: Settings, label: "opcion 4", path: "/educative/4", permission: "educative.edit" },
     ],
   },
   agenda: {

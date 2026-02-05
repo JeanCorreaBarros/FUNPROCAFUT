@@ -1,10 +1,11 @@
 import React from "react";
 
+const LOGO_PATH = process.env.NEXT_PUBLIC_LOGO_PATH ?? '/logo-FUNPROCAFUT.png';
+
 export default function AnimatedLogo() {
-  // Simple fallback logo for now
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 60 }}>
-      <img src="/logo-bivoo.png" alt="Bivoo Logo" style={{ height: 40 }} />
+      <img src={LOGO_PATH} alt="FUNPROCAFUT Logo" style={{ height: 40 }} />
     </div>
   );
 }

@@ -170,7 +170,7 @@ export default function LoginPage() {
             {/* Mobile Logo */}
             <div className="flex justify-center mb-6 ">
               <Image
-                src="/logo-FUNPROCAFUT.png"
+                src={process.env.NEXT_PUBLIC_LOGO_PATH ?? '/logo-FUNPROCAFUT.png'}
                 alt="FUNPROCAFUT Logo"
                 width={200}
                 height={50}

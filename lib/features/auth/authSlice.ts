@@ -53,6 +53,10 @@ const rolePermissions: Record<UserRole, string[]> = {
     "vote.create",
     "vote.edit",
     "vote.delete",
+    "educative.view",
+    "educative.create",
+    "educative.edit",
+    "educative.delete",
   ],
   colaborador: [
     "agenda.view",
