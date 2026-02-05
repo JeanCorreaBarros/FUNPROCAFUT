@@ -16,9 +16,7 @@ const nextConfig = {
      turbo: {},
   },
   // Ignora archivos innecesarios en watch
-  watchOptions: {
-    ignored: ['**/.git/**', '**/node_modules/**', '**/.next/**', '**/.cache/**'],
-  },
+ 
 }
 
 export default nextConfig

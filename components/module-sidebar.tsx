@@ -22,6 +22,7 @@ import {
   Shield,
   UserCheck,
   User,
+  MapPin,
 } from "lucide-react"
 
 interface ModuleSidebarProps {
@@ -71,6 +72,7 @@ const moduleConfigs = {
       { icon: Home, label: "Inicio", path: "/configuracion", active: true, permission: "configuracion.view" },
       { icon: FileText, label: "Auditoría", path: "/configuracion/auditoria", permission: "configuracion.edit" },
       { icon: Users, label: "Empresa", path: "/configuracion/empresa", permission: "configuracion.edit" },
+      { icon: MapPin, label: "Registro Sede", path: "/configuracion/registro-sede", permission: "configuracion.edit" },
      // { icon: User, label: "Perfil", path: "/configuracion/perfil", permission: "configuracion.edit" },
       { icon: Shield, label: "Permisos", path: "/configuracion/permisos", permission: "seguridad.view" },
       { icon: Settings, label: "Seguridad", path: "/configuracion/seguridad", permission: "configuracion.edit" },
