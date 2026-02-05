@@ -1,10 +1,10 @@
-## Bivoo — Plataforma de gestión empresarial (Bivoo App)
+## FUNPROCAFUT — Plataforma de gestión empresarial (FUNPROCAFUT App)
 
-Bivoo es una plataforma SaaS de gestión empresarial enfocada en ofrecer funcionalidades de facturación, contabilidad, inventarios, agenda, clientes, caja y más, construida con Next.js, React y TypeScript.
+FUNPROCAFUT es una plataforma SaaS de gestión empresarial enfocada en ofrecer funcionalidades de facturación, contabilidad, inventarios, agenda, clientes, caja y más, construida con Next.js, React y TypeScript.
 
 ### Resumen
 
-- Nombre del proyecto: bivoo-project
+- Nombre del proyecto: FUNPROCAFUT-project
 - Versión: 0.1.0
 - Stack principal: Next.js 14, React 18, TypeScript, TailwindCSS, Radix UI, Redux Toolkit
 - Autor (meta): Jean Carlos Correa Barros
@@ -126,7 +126,13 @@ Si quieres, puedo añadir plantillas de PR/Issue y reglas de contribución (CODE
 
 ## Licencia
 
-No se encontró un archivo `LICENSE` en el repo. Añade una licencia (por ejemplo MIT, Apache 2.0) si deseas establecer permisos de uso.
+**Importante:** FUNPROCAFUT es una *Student platform* powered by **Bivoo**. Este repositorio representa una implementación/derivado con licencia relacionado a Bivoo — las licencias oficiales de Bivoo se gestionan y venden por separado. Asegúrate de incluir el archivo `LICENSE` adecuado (por ejemplo: MIT, Apache 2.0 u otra licencia comercial provista por Bivoo) y la documentación de licencia si vas a distribuir o usar este código en producción.
+
+Si necesitas detalles sobre la licencia de Bivoo que aplica a esta instancia de FUNPROCAFUT, contacta al autor o al equipo responsable para obtener la documentación y permisos correspondientes.
+
+**English (Important):** FUNPROCAFUT is a Student platform powered by **Bivoo**. This repository represents an implementation/derivative that depends on Bivoo; official Bivoo licenses are managed and sold separately. Make sure to include an appropriate `LICENSE` file (e.g., MIT, Apache 2.0, or a commercial license provided by Bivoo) and any licensing documentation if you plan to distribute or use this code in production.
+
+If you need details about which Bivoo license applies to this instance of FUNPROCAFUT, contact the author or the responsible team to obtain the proper documentation and licensing permissions.
 
 ## Contacto
 
