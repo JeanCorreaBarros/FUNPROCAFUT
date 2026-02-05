@@ -31,7 +31,7 @@ interface ModuleSidebarProps {
 
 const moduleConfigs = {
   vote: {
-    title: "Vote",
+    title: "Sistema Para la Gestion Vote",
     items: [
       { icon: Home, label: "Inicio", path: "/vote", active: true, permission: "vote.view" },
       { icon: Users, label: "Registro de Votantes", path: "/vote/registro", permission: "vote.view" },
@@ -41,7 +41,7 @@ const moduleConfigs = {
     ],
   },
     educative: {
-    title: "Educative",
+    title: "Plataforma Educative",
     items: [
       { icon: Home, label: "Inicio", path: "/educative", active: true, permission: "educative.view" },
       { icon: Users, label: "opcion 1", path: "/educative/1", permission: "educative.view" },

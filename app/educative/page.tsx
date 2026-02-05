@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react"
 import { AuthGuard } from "@/components/auth-guard"
 import { ModuleLayout } from "@/components/module-layout"
 import { WelcomeBanner } from "@/components/welcome-banner"
-import { BookOpen, FileText, Video, Award } from "lucide-react"
+import { BookOpen, FileText, Video, Award, Download } from "lucide-react"
 import Image from "next/image"
 import { Gift, Search, X } from "lucide-react"
 
@@ -64,6 +64,16 @@ export default function EducativePage() {
         { id: 1, title: "Guía de bienvenida", type: "PDF" },
         { id: 2, title: "Video - Introducción", type: "Video" },
         { id: 3, title: "Plantilla de proyecto", type: "DOC" },
+    ]
+
+    const birthdaysToday = [
+        { id: 1, name: "ISABELLA MENDOZA MENDOZA", class: "Décimo A", avatar: null },
+        { id: 2, name: "DIEGO OLIVERA ARRIETA", class: "Quinto A", avatar: null },
+    ]
+
+    const birthdaysTomorrow = [
+        { id: 3, name: "ALEJANDRO ANDRES CARLIER FONTALVO", class: "Transición A", avatar: "/avatar1.jpg" },
+        { id: 4, name: "EMMANUEL DAVID GONZALEZ CHARRIS", class: "Primero B", avatar: null },
     ]
 
     return (
@@ -388,86 +398,110 @@ export default function EducativePage() {
                                     <h3 className="text-lg font-semibold">Cumpleaños</h3>
                                 </div>
 
-                                <div className="p-4 max-h-64 overflow-y-auto">
+                                <div className="p-4 max-h-88 overflow-y-auto">
                                     <div className="mb-4">
                                         <div className="text-sm font-medium text-gray-700 mb-2 bg-gray-50 p-2 rounded">Hoy es el cumpleaños de:</div>
                                         <ul className="space-y-3">
-                                            <li className="flex items-center gap-3 bg-white border rounded p-2">
-                                                <div className="w-12 h-12 bg-gray-100 rounded-md flex items-center justify-center text-gray-400"> </div>
-                                                <div>
-                                                    <div className="text-sm font-semibold text-blue-700">ISABELLA MENDOZA MENDOZA</div>
-                                                    <div className="text-xs text-gray-500">Décimo A</div>
-                                                </div>
-                                            </li>
-
-                                            <li className="flex items-center gap-3 bg-white border rounded p-2">
-                                                <div className="w-12 h-12 bg-blue-50 rounded-md flex items-center justify-center text-blue-500"> </div>
-                                                <div>
-                                                    <div className="text-sm font-semibold text-blue-700">DIEGO OLIVERA ARRIETA</div>
-                                                    <div className="text-xs text-gray-500">Quinto A</div>
-                                                </div>
-                                            </li>
+                                            {birthdaysToday.map((person) => (
+                                                <li key={person.id} className="flex items-center gap-3 bg-white border rounded p-2">
+                                                    <div className="w-12 h-12 bg-gray-100 rounded-md flex items-center justify-center text-gray-400 flex-shrink-0 overflow-hidden">
+                                                        {person.avatar ? (
+                                                            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('${person.avatar}')` }} />
+                                                        ) : (
+                                                            <span className="text-xs text-gray-400">sin foto</span>
+                                                        )}
+                                                    </div>
+                                                    <div>
+                                                        <div className="text-sm font-semibold text-blue-700">{person.name}</div>
+                                                        <div className="text-xs text-gray-500">{person.class}</div>
+                                                    </div>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
 
                                     <div>
                                         <div className="text-sm font-medium text-gray-700 mb-2 bg-gray-50 p-2 rounded">Mañana está de cumpleaños:</div>
                                         <ul className="space-y-3">
-                                            <li className="flex items-center gap-3 bg-white border rounded p-2">
-                                                <div className="w-12 h-12 rounded-md overflow-hidden">
-                                                    <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/avatar1.jpg')" }} />
-                                                </div>
-                                                <div>
-                                                    <div className="text-sm font-semibold text-blue-700">ALEJANDRO ANDRES CARLIER FONTALVO</div>
-                                                    <div className="text-xs text-gray-500">Transición A</div>
-                                                </div>
-                                            </li>
-
-                                            <li className="flex items-center gap-3 bg-white border rounded p-2">
-                                                <div className="w-12 h-12 bg-gray-100 rounded-md flex items-center justify-center text-gray-400"> </div>
-                                                <div>
-                                                    <div className="text-sm font-semibold text-blue-700">EMMANUEL DAVID GONZALEZ CHARRIS</div>
-                                                    <div className="text-xs text-gray-500">Primero B</div>
-                                                </div>
-                                            </li>
+                                            {birthdaysTomorrow.map((person) => (
+                                                <li key={person.id} className="flex items-center gap-3 bg-white border rounded p-2">
+                                                    <div className="w-12 h-12 rounded-md flex-shrink-0 overflow-hidden bg-gray-100 flex items-center justify-center">
+                                                        {person.avatar ? (
+                                                            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('${person.avatar}')` }} />
+                                                        ) : (
+                                                            <span className="text-xs text-gray-400">sin foto</span>
+                                                        )}
+                                                    </div>
+                                                    <div>
+                                                        <div className="text-sm font-semibold text-blue-700">{person.name}</div>
+                                                        <div className="text-xs text-gray-500">{person.class}</div>
+                                                    </div>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div className="bg-white rounded-lg shadow p-4">
-                                <div className="flex items-center gap-3 mb-2">
+
+                        </div>
+
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+
+                        <div className="col-span-1 md:col-span-1 lg:col-span-4 bg-white rounded-lg shadow flex flex-col justify-between">
+                            <div className="p-4 flex-1 flex flex-col">
+                                <div className="flex items-center gap-3 mb-4">
                                     <Video className="w-5 h-5 text-amber-600" />
                                     <h3 className="text-sm font-semibold">Recursos Recientes</h3>
                                 </div>
-
-                                <ul className="space-y-2 text-sm">
-                                    {sampleResources.map((r) => (
-                                        <li key={r.id} className="flex items-center justify-between">
-                                            <div className="text-sm">{r.title}</div>
-                                            <div className="text-xs text-gray-500">{r.type}</div>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div className="flex-1 overflow-y-auto">
+                                    <table className="w-full text-sm">
+                                        <thead className="sticky top-0 bg-gray-50">
+                                            <tr className="border-b">
+                                                <th className="px-3 py-2 text-left font-medium text-gray-700">Recurso</th>
+                                                <th className="px-3 py-2 text-center font-medium text-gray-700">Tipo</th>
+                                                <th className="px-3 py-2 text-center font-medium text-gray-700 w-10">Acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {sampleResources.map((r) => (
+                                                <tr key={r.id} className="border-b hover:bg-gray-50">
+                                                    <td className="px-3 py-2 text-gray-900">{r.title}</td>
+                                                    <td className="px-3 py-2 text-center text-gray-500 text-xs">{r.type}</td>
+                                                    <td className="px-3 py-2 text-center">
+                                                        <button className="inline-flex items-center justify-center p-1 text-indigo-600 hover:bg-indigo-50 rounded transition-colors" title="Descargar recurso" onClick={() => console.log(`Descargando: ${r.title}`)}>
+                                                            <Download size={16} />
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
+                        </div>
 
-                            <div className="bg-white rounded-lg shadow p-4 flex items-center gap-3">
-                                <Award className="w-6 h-6 text-yellow-500" />
+                        <div className="col-span-1 md:col-span-1 lg:col-span-4 bg-white rounded-lg shadow p-4 flex flex-col justify-between">
+                            <div className="flex items-start gap-3">
+                                <Award className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" />
                                 <div>
                                     <div className="text-sm font-semibold">Mi Progreso</div>
                                     <div className="text-xs text-gray-500">Tendencia semanal: +4% respecto a la semana pasada</div>
                                 </div>
                             </div>
-
-                            <div className="bg-white rounded-lg shadow p-4 text-center">
-                                <Image src="/education-icons.png" alt="Education" width={220} height={80} className="mx-auto" />
-                                <div className="text-sm text-gray-500 mt-2">Explora lecciones y recursos en la plataforma educativa</div>
-                                <div className="mt-3">
-                                    <button className="px-3 py-2 bg-indigo-600 text-white rounded text-sm">Ir a la Biblioteca</button>
-                                </div>
-                            </div>
-
                         </div>
+
+                        <div className="col-span-1 md:col-span-1 lg:col-span-4 bg-white rounded-lg shadow p-4 flex flex-col justify-between">
+                            <div className="text-center">
+                                <Image src="/education-icons.png" alt="Education" width={220} height={80} className="mx-auto" />
+                                <div className="text-sm text-gray-500 mt-3">Explora lecciones y recursos en la plataforma educativa</div>
+                            </div>
+                            <div className="mt-4">
+                                <button className="w-full px-3 py-2 bg-indigo-600 text-white rounded text-sm hover:bg-indigo-700">Ir a la Biblioteca</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </ModuleLayout>

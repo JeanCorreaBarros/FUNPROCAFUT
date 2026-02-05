@@ -13,6 +13,7 @@ import { Switch } from "@/components/ui/switch"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { ArrowLeft, Check, Pencil, Plus, Save, Trash, Upload } from "lucide-react"
 import Link from "next/link"
+import RegistroSedeForm from "@/components/registro-sede-form"
 
 // Tipos para las sedes
 type Sede = {
@@ -285,65 +286,25 @@ export default function EmpresaPage() {
                       </Table>
                     </div>
 
-                    {/* Modal para agregar/editar sede */}
+                    {/* Modal para agregar/editar sede (ahora usa RegistroSedeForm en lugar de inputs locales) */}
                     {mostrarModalSede && (
-                      <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+                      <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/10 dark:bg-black/20 backdrop-blur-md">
                         <motion.div
                           initial={{ opacity: 0, scale: 0.9 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          className="bg-white rounded-lg shadow-lg w-full max-w-md p-6"
+                          className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm rounded-lg shadow-lg w-full max-w-3xl p-6 border border-white/20"
                         >
-                          <h3 className="text-lg font-medium mb-4">{editandoId ? "Editar Sede" : "Agregar Nueva Sede"}</h3>
-                          <div className="space-y-4">
-                            <div>
-                              <Label htmlFor="nombre-sede">Nombre de la Sede</Label>
-                              <Input
-                                id="nombre-sede"
-                                value={nuevaSede.nombre || ""}
-                                onChange={(e) => setNuevaSede({ ...nuevaSede, nombre: e.target.value })}
-                              />
-                            </div>
-                            <div>
-                              <Label htmlFor="direccion-sede">Dirección</Label>
-                              <Input
-                                id="direccion-sede"
-                                value={nuevaSede.direccion || ""}
-                                onChange={(e) => setNuevaSede({ ...nuevaSede, direccion: e.target.value })}
-                              />
-                            </div>
-                            <div>
-                              <Label htmlFor="ciudad-sede">Ciudad</Label>
-                              <Input
-                                id="ciudad-sede"
-                                value={nuevaSede.ciudad || ""}
-                                onChange={(e) => setNuevaSede({ ...nuevaSede, ciudad: e.target.value })}
-                              />
-                            </div>
-                            <div>
-                              <Label htmlFor="telefono-sede">Teléfono</Label>
-                              <Input
-                                id="telefono-sede"
-                                value={nuevaSede.telefono || ""}
-                                onChange={(e) => setNuevaSede({ ...nuevaSede, telefono: e.target.value })}
-                              />
-                            </div>
-                            <div className="flex items-center space-x-2">
-                              <Switch
-                                id="sede-principal"
-                                checked={nuevaSede.principal || false}
-                                onCheckedChange={(checked) => setNuevaSede({ ...nuevaSede, principal: checked })}
-                              />
-                              <Label htmlFor="sede-principal">Sede Principal</Label>
-                            </div>
-                          </div>
-                          <div className="flex justify-end gap-2 mt-6">
-                            <Button variant="outline" onClick={() => setMostrarModalSede(false)}>
-                              Cancelar
-                            </Button>
-                            <Button onClick={editandoId ? actualizarSede : agregarSede}>
-                              {editandoId ? "Actualizar" : "Agregar"}
-                            </Button>
-                          </div>
+                          <RegistroSedeForm
+                            onCancel={() => setMostrarModalSede(false)}
+                            onSuccess={(newSede) => {
+                              // Si el formulario devolvió un nombre de sede, agregarla a la lista
+                              if (newSede?.nombre) {
+                                const id = (sedes.length + 1).toString()
+                                setSedes([...sedes, { id, nombre: newSede.nombre || '', direccion: newSede.direccion || '', ciudad: newSede.ciudad || '', telefono: newSede.telefono || '', principal: false }])
+                              }
+                              setMostrarModalSede(false)
+                            }}
+                          />
                         </motion.div>
                       </div>
                     )}

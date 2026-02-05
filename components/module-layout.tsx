@@ -97,7 +97,7 @@ export function ModuleLayout({ children, moduleType }: ModuleLayoutProps) {
                   onClick={goToDashboard}
                   variant="ghost"
                   size="sm"
-                  className="p-2 hover:bg-gray-100 transition-colors"
+                  className="p-2 hover:bg-gray-100 cursor-pointer transition-colors"
                 >
                   <ChevronLeft size={20} />
                 </Button>
@@ -109,8 +109,8 @@ export function ModuleLayout({ children, moduleType }: ModuleLayoutProps) {
 
               {/* Center - Company name (hidden on mobile) */}
               {!isMobile && (
-                <div className="hidden md:block">
-                  <span className="text-sm text-bivoo-purple font-medium">{ubicacion}</span>
+                <div className="hidden md:block ">
+                  <span className="text-md text-bivoo-purple pr-16 font-bold">{ubicacion}</span>
                 </div>
               )}
 
